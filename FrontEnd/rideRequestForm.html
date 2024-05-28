@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Request</title>
+    <link rel="stylesheet" href="rideRequestForm.css">
+</head>
+<body>
+    <form id="rideRequestForm">
+        <!-- Form for ride request details -->
+        <h3>Start Date End Date</h3>
+        <!-- Input field for start time -->
+        <label for="startTime">Start Time:</label><br>
+        <input type="datetime-local" id="startTime" name="startTime"><br>
+
+        <!-- Input field for end time -->
+        <label for="endTime">End Time:</label><br>
+        <input type="datetime-local" id="endTime" name="endTime"><br>
+
+        <!-- Select dropdown for eligible offers -->
+        <label for="eligibleOffers">Eligible Offers:</label><br>
+        <div style="display: flex; align-items: center;">
+            <select id="eligibleOffers" name="eligibleOffers"></select>
+            <!-- Button to fetch offers -->
+            <button type="button" id="fetchOffersButton" style="margin-left: 10px;">Fetch Offers</button>
+        </div><br>
+
+        <!-- Input field for total amount -->
+        <label for="totalAmount">Total Amount:</label><br>
+        <input type="text" id="totalAmount" name="totalAmount" readonly><br><br>
+
+        <!-- Button to confirm ride request -->
+        <button type="button" id="confirmButton" style="display: none;">Confirm Ride</button>
+    </form>
+    <!-- JavaScript file -->
+    <script src="rideRequestForm.js"></script>
+</body>
+</html>

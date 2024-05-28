@@ -1,0 +1,74 @@
+/* AdminPage.css */
+
+body {
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid LightGray;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: LightGray;
+}
+
+form {
+    display: none;
+}
+
+#addButton {
+    position: absolute;
+    top: 10px;
+    right: 120px; /* Adjusted position to make room for "Add Offer" button */
+}
+#seeCustomerDetailsButton {
+    position: absolute;
+    top: 10px;
+    right:360px;
+}
+
+tbody > td {
+    cursor: pointer;
+}
+
+#showOrdersButton {
+    position: absolute;
+    top: 10px;
+    right: 240px; /* Adjusted position to make room for "Add Vehicle" button */
+}
+
+/* Styles for the "Add Offer" button */
+#addOfferButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-left: 120px; /* Add margin to the left to avoid overlapping */
+    z-index: 1; /* Ensure the button appears above other elements */
+}
+
+
+button#logoutButton {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: white;
+    background-color: #d9534f;
+    border: 1px solid #d43f3a;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button#logoutButton:hover {
+    background-color: #c9302c;
+}

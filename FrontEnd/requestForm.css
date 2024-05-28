@@ -1,0 +1,98 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: Gainsboro;
+}
+
+#addForm {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid LightGray;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: White;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: Gainsboro;
+}
+
+#addForm {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid LightGray;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: White;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid LightGray;
+    border-radius: 5px;
+}
+
+button[type="submit"],
+button#closeButton {
+    padding: 10px 20px;
+    background-color: DodgerBlue;
+    color: White;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button#deleteBtn {
+    padding: 10px 20px;
+    background-color: DodgerBlue;
+    color: White;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button#closeButton:hover {
+    background-color: DeepSkyBlue;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid LightGray;
+    border-radius: 5px;
+}
+
+button[type="submit"],
+button#closeButton {
+    padding: 10px 20px;
+    background-color: DodgerBlue;
+    color: White;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button#closeButton:hover {
+    background-color: DeepSkyBlue;
+}

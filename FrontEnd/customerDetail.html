@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>User Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <!-- <th>Role</th> -->
+                <th>User Name</th>
+                <th>Active</th>
+                <th>Delete User</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody">
+            <!-- User details will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Function to fetch user data from the specified URL
+        function fetchUserData() {
+            return fetch('http://localhost:8181/users')
+                .then(response => response.json())
+                .catch(error => {
+                    console.error('Error fetching user data:', error);
+                });
+        }
+
+        // Function to populate the user table with data
+        function populateUserTable(userData) {
+            const tableBody = document.getElementById('userTableBody');
+            tableBody.innerHTML = '';
+            console.log(userData)
+            userData.forEach(user => {
+                const row = tableBody.insertRow();
+                row.innerHTML = `
+                    <td>${user.id}</td>
+                    <td>${user.email}</td>
+                    <td>${user.phoneNumber || '-'}</td>
+                    <td>${user.username}</td>
+                    <td>${user.active ? '<button style="background-color: green; color: white;">Yes</button>' : 'No'}</td>
+                    <td><button class="statusButton" data-user-id="${user.id}" data-active="${user.active}" style="background-color: ${user.active ? 'red' : 'green'}; color: white;">${user.active ? 'Delete' : 'Reactivate'}</button></td>
+                `;
+                
+            });
+
+            // Attach event listeners to status buttons
+            document.querySelectorAll('.statusButton').forEach(button => {
+                button.addEventListener('click', function() {
+                    const userId = this.getAttribute('data-user-id');
+                    const isActive = this.getAttribute('data-active') === 'true';
+                    if (isActive) {
+                        deactivateUser(userId);
+                    } else {
+                        reactivateUser(userId);
+                    }
+                });
+            });
+        }
+
+        // Function to deactivate a user
+        function deactivateUser(userId) {
+            fetch(`http://localhost:8181/users/deactivate/${userId}`, {
+                method: 'PUT',
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to deactivate user');
+                }
+                return response.text(); // Handle plain text response
+            })
+            .then(() => {
+                // Refresh the user data
+                alert("Deactivated Successfully");
+                fetchUserData().then(userData => {
+                    populateUserTable(userData);
+                });
+            })
+            .catch(error => {
+                console.error('Error deactivating user:', error);
+            });
+        }
+
+        // Function to reactivate a user
+        function reactivateUser(userId) {
+            fetch(`http://localhost:8181/users/reactivate/${userId}`, {
+                method: 'PUT',
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to reactivate user');
+                }
+                return response.text(); // Handle plain text response
+            })
+            .then(() => {
+                // Refresh the user data
+                alert("Reactivated Successfully");
+                fetchUserData().then(userData => {
+                    populateUserTable(userData);
+                });
+            })
+            .catch(error => {
+                console.error('Error reactivating user:', error);
+            });
+        }
+
+        // Fetch user data and populate the table on page load
+        window.onload = function() {
+            fetchUserData().then(userData => {
+                populateUserTable(userData);
+            });
+        };
+    </script>
+</body>
+</html>

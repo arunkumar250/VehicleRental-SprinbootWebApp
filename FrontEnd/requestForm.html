@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Form</title>
+    <link rel="stylesheet" href="requestForm.css">
+</head>
+<body>
+    <!-- Form for adding or editing vehicle details -->
+    <form id="addForm">
+        <h3>Vehicle Details</h3>
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" autocomplete="on" required><br><br>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required autocomplete="on"><br><br>
+        
+        <label for="registrationNumber">Registration Number:</label>
+        <input type="text" id="registrationNumber" required autocomplete="on"><br><br>
+        
+        <label for="fuelType">Fuel Type:</label>
+        <input type="text" id="fuelType" required autocomplete="on"><br><br>
+        
+        <label for="rate">Rate:</label>
+        <input type="text" id="rate" required autocomplete="on"><br><br>
+
+        <label for="rate">Color:</label>
+        <input type="text" id="color" required autocomplete="on"><br><br>
+        
+        <!-- Buttons for submitting, closing, and deleting -->
+        <button id="submitBtn" type="submit">Save</button>
+        <button type="button" id="closeButton">Close</button>
+        <button type="button" id="deleteBtn">Delete</button> 
+    </form>
+
+    <script src="requestForm.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+}
+
+button#showOrdersButton {
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    border: black solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid LightGray; /* Add border to the table */
+}
+
+th, td {
+    border: 1px solid LightGray; /* Add border to table cells */
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: LightGray;
+}
+
+button#logoutButton {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: white;
+    background-color: #d9534f;
+    border: 1px solid #d43f3a;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button#logoutButton:hover {
+    background-color: #c9302c;
+}

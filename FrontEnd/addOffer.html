@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Offer</title>
+    <link rel="stylesheet" href="addOffer.css">
+</head>
+<body>
+    <h2>Add Offer</h2>
+    <!-- Form to add a new offer -->
+    <form id="addOfferForm">
+        <!-- Name field -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <!-- Discount Value field -->
+        <label for="discount_value">Discount Value:</label><br>
+        <input type="number" id="discount_value" name="discount_value" step="0.01"><br>
+
+        <!-- Start Date field -->
+        <label for="start_date">Start Date:</label><br>
+        <input type="datetime-local" id="start_date" name="start_date"><br>
+
+        <!-- End Date field -->
+        <label for="end_date">End Date:</label><br>
+        <input type="datetime-local" id="end_date" name="end_date"><br>
+
+        <!-- Minimum Days field -->
+        <label for="minimum_days">Minimum Days:</label><br>
+        <input type="number" id="minimum_days" name="minimum_days"><br>
+
+        <!-- Status field -->
+        <label for="status">Status:</label><br>
+        <select id="status" name="status">
+            <option value="true">Active</option>
+            <option value="false">Inactive</option>
+        </select><br><br>
+        
+        <!-- Description field -->
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"></textarea><br>
+
+        <!-- Submit button -->
+        <input id="submitOffer" type="submit" value="Submit">
+    </form>
+    <!-- JavaScript file for handling form submission -->
+    <script src="addOffer.js"></script>
+</body>
+</html>
